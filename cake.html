@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>당신의 케이크 - 예약하기</title>
+</head>
+<body>
+    <h1>🍰 당신의 케이크</h1>
+    <p>세상에 하나뿐인 수제 케이크를 예약하세요</p>
+
+    <h2>케이크 소개</h2>
+    <ul>
+        <li>🌸 플라워 케이크 - 부드러운 생크림과 꽃 장식</li>
+        <li>🍫 초코 러버 케이크 - 진한 초콜릿과 부드러운 무스</li>
+        <li>🍓 딸기 생크림 케이크 - 신선한 딸기 듬뿍</li>
+    </ul>
+
+    <h2>케이크 예약</h2>
+    <form action="submit_form.php" method="POST">
+        이름: <input type="text" name="name" required><br><br>
+        연락처: <input type="text" name="phone" required><br><br>
+        수령일: <input type="date" name="pickup_date" required><br><br>
+        케이크 종류: 
+        <select name="cake_type">
+            <option>플라워 케이크</option>
+            <option>초코 러버 케이크</option>
+            <option>딸기 생크림 케이크</option>
+        </select><br><br>
+        추가 요청사항:<br>
+        <textarea name="requests" rows="5" cols="40"></textarea><br><br>
+        <input type="submit" value="예약하기">
+    </form>
+
+    <h2>운영정보</h2>
+    <p>운영시간: 매주 수~일 11:00 - 18:00</p>
+    <p>위치: 서울시 강남구 ...</p>
+    <p>문의: 010-1234-5678 (카카오톡 오픈채팅 링크)</p>
+
+</body>
+</html>
