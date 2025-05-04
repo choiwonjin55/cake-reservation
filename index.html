@@ -75,7 +75,7 @@
     </ul>
 
     <h2>케이크 예약</h2>
-    <form action="https://formspree.io/f/xzzrdkwk" method="POST">
+    <form id="cakeForm">
         이름: <input type="text" name="name" required><br><br>
         연락처: <input type="text" name="phone" required><br><br>
         수령일: <input type="date" name="pickup_date" required><br><br>
@@ -93,7 +93,30 @@
     <h2>운영정보</h2>
     <p>운영시간: 매주 수~일 11:00 - 18:00</p>
     <p>위치: 서울시 강남구 ...</p>
-    <p>문의: 010-1234-5678 (카카오톡 오픈채팅 링크)</p>
+    <p>문의: 010-1234-5678 </p>
+    <p>카카오톡: (링크 추가 예정) </p>
+    
+    <script>
+        document.getElementById('cakeForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+      
+          const form = e.target;
+          const data = new FormData(form);
+          const scriptURL = "https://script.google.com/macros/s/AKfycbxWWhwAeXQAkTRbQxuU8YzlOr5P9zdgYOg3ERCWEJ2_Ki21wAU03OVR0K9HMGeRByy4mA/exec";
+      
+          fetch(scriptURL, {
+            method: 'POST',
+            body: data
+          }).then(response => {
+            alert("예약이 접수되었습니다!");
+            form.reset();
+          }).catch(error => {
+            alert("문제가 발생했습니다. 다시 시도해주세요.");
+            console.error("Error!", error.message);
+          });
+        });
+      </script>
+      
 
 </body>
 </html>
